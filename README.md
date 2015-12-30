@@ -2,6 +2,15 @@
 
 PhaserJS boilerplate for top-down tile-based RPGs.
 
+# Goals
+
+- [ ] Configure basic Phaser.js game
+- [ ] Gather graphical resources 
+- [ ] Build a map in Tiled with built-in properties
+- [ ] Write parsing code on Phaser end for displaying a level
+- [ ] Implement a simple character with tile-based movement
+- [ ] Experiment with getting tile properties via Phaser.js
+
 # LICENSE
 
 The MIT License (MIT)
