@@ -1,4 +1,4 @@
-var mapConstants = (function() {
+var MapConstants = (function() {
 	
 	'use strict';
 
