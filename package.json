@@ -1,0 +1,28 @@
+{
+  "name": "phaser-boilerplate",
+  "version": "0.0.0",
+  "description": "Boilerplate for Phaser.js tile-based games",
+  "main": "index.js",
+  "dependencies": {
+    "phaser": "^2.4.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DrkSephy/phaser-boilerplate.git"
+  },
+  "keywords": [
+    "phaserjs",
+    "tile",
+    "boilerplate"
+  ],
+  "author": "David Leonard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DrkSephy/phaser-boilerplate/issues"
+  },
+  "homepage": "https://github.com/DrkSephy/phaser-boilerplate"
+}
