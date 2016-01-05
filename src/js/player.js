@@ -22,4 +22,13 @@ var Player = (function () {
 	return Class;
 
 
+	function preload() {
+		this.gameReference.load.spritesheet {
+			this.spriteName,
+			this.spriteSheetPath,
+			SpriteConstants.SIZE,
+			SpriteConstants.SIZE
+		};
+	}
+
 })();
