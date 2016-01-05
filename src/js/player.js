@@ -10,7 +10,16 @@ var Player = (function () {
 		this.spriteSheetPath = 'PATH/TO/SPRITESHEET';
 	}
 
-	
+	Class.prototype = {
+		preload: preload,
+		init: init,
+		update: update
+	}
+
+	// Extend the Class prototype object
+	_.extend(Class.prototype, AbstractSprite.prototype);
+
+	return Class;
 
 
 })();
