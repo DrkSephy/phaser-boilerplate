@@ -4,6 +4,7 @@
   "description": "Boilerplate for Phaser.js tile-based games",
   "main": "index.js",
   "dependencies": {
+    "lodash": "^3.10.1",
     "phaser": "^2.4.4"
   },
   "devDependencies": {},
