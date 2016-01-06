@@ -63,15 +63,76 @@ var Player = (function () {
 		if(this.isOntile()) {
 			// Clear the previous tile's collision marker
 			if(this.currentTile) {
-				this.mapReferennce.setCollisionAt(this.currentTile, false);
+				this.mapReference.setCollisionAt(this.currentTile, false);
 			}
 
 			// Get the current tile
 			this.currentTile = this.getTileFromCurrentPosition();
-			this.mapReferennce.setCollisionAt(this.currentTile, true);
+			this.mapReference.setCollisionAt(this.currentTile, true);
 
 			// Check surrounding collisions
-			this.surroundingCollisions = this.mapReferennce.getSurroundingCollisionsAt(this.currentTile, true);
+			this.surroundingCollisions = this.mapReference.getSurroundingCollisionsAt(this.currentTile, true);
+			
+			// Movement in Up direction
+			if(isUpPressed) {
+				this.walkingDirection = SpriteConstants.Direction.UP;
+				if(!this.surroundingCollisions.up) {
+					this.isWalkingAnim = true;
+					this.isMoving = true;
+				} else {
+					this.isWalkingAnim = false;
+					this.isMoving = false;
+				}
+			}
+
+			// Movement in right direction
+			else if(isRightPressed) {
+				this.walkingDirection = SpriteConstants.Direction.RIGHT;
+				if(!this.surroundingCollisions.right) {
+					this.isWalkingAnim = true;
+					this.isMoving = true;
+				}	else {
+					this.isWalkingAnim = false;
+					this.isMoving = false;
+				}
+			}
+
+			// Movement in down direction
+			else if(isDownPressed) {
+				this.walkingDirection = SpriteConstants.Direction.DOWN;
+				if(!this.surroundingCollisions.down) {
+					this.isWalkingAnim = true;
+					this.isMoving = true;
+				} else {
+					this.isWalkingAnim = false;
+					this.isMoving = false;
+				}
+			} 
+
+			// Movement in left direction
+			else if(isLeftPressed) {
+				this.walkingDirection = SpriteConstants.Direction.LEFT;
+				if(!this.surroundingCollisions.left) {
+					this.isWalkingAnim = true;
+					this.isMoving = true;
+				} else {
+					this.isWalkingAnim = false;
+					this.isMoving = false;
+				}
+			} 
+
+			// None of the movement directions were triggered
+			else {
+				this.isWalkingAnim = false;
+				this.isMoving = false;
+			}
+		} 
+
+		// Player is not on a tile, in mid-movement
+		else {
+			this.setNextTileFromCurrentDirection();
+			this.mapReference.setCollisionAt(this.nextTile, true);
+			this.surroundingCollisions = this.mapReference.getSurroundingCollisionsAt(this.nextTile, true);
 		}
 	}
 
