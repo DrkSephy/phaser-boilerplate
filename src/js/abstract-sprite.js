@@ -3,6 +3,7 @@ var AbstractSprite = (function () {
 	'use strict';
 
 	function Class(game, map) {
+		
 		this.gameReference = game;
 		this.mapReference = map;
 		this.className = 'AbstractSprite';
@@ -27,5 +28,26 @@ var AbstractSprite = (function () {
 		this.walkingSpeed = 0;
 		this.isMoving = false;
 	}
+
+	Class.prototype = {
+		
+		// Animation Methods
+		addBasicAnimation: addBasicAnimation,
+		setAnim: setAnim,
+
+		// Movement methods
+		move: move,
+
+		// Tile management methods
+		isOnTile: isOnTile,
+		getTileFromCurrentPosition: getTileFromCurrentPosition,
+		setNextTileFromCurrentDirection: setNextTileFromCurrentDirection,
+		getTileX: getTileX,
+		getTileY: getTileY
+	}; 
+
+	return Class;
+
+	
 
 })();
