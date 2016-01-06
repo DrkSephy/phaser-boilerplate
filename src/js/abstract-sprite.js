@@ -166,4 +166,12 @@ var AbstractSprite = (function () {
 		}
 	}
 
+	function getTileX(tileXId) {
+		return (SpriteConstants.Anchor.X * SpriteConstants.SIZE) + (tileXId * SpriteConstants.SIZE);
+	}
+
+	function getTileY(tileYId) {
+		return (SpriteConstants.Anchor.Y * SpriteConstants.SIZE) + (tileYId * SpriteConstants.SIZE);
+	}
+
 })();
