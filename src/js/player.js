@@ -59,4 +59,20 @@ var Player = (function () {
 		this.addBasicAnimation();
 	}
 
+	function update(isUpPressed, isRightPressed, isDownPressed, isLeftPressed) {
+		if(this.isOntile()) {
+			// Clear the previous tile's collision marker
+			if(this.currentTile) {
+				this.mapReferennce.setCollisionAt(this.currentTile, false);
+			}
+
+			// Get the current tile
+			this.currentTile = this.getTileFromCurrentPosition();
+			this.mapReferennce.setCollisionAt(this.currentTile, true);
+
+			// Check surrounding collisions
+			this.surroundingCollisions = this.mapReferennce.getSurroundingCollisionsAt(this.currentTile, true);
+		}
+	}
+
 })();
