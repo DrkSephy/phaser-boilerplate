@@ -29,6 +29,8 @@ var AbstractSprite = (function () {
 		this.isMoving = false;
 	}
 
+	// Public API
+
 	Class.prototype = {
 		
 		// Animation Methods
@@ -48,6 +50,14 @@ var AbstractSprite = (function () {
 
 	return Class;
 
-	
+	// Private methods
+	function addBasicAnimation() {
+		this.sprite.animations.add(SpriteConstants.Animation.STILL_DOWN, [0]);
+		this.sprite.animations.add(SpriteConstants.Animation.STILL_UP, [2]);
+		this.sprite.animations.add(SpriteConstants.Animation.STILL_SIDE, [4]);
+		this.sprite.animations.add(SpriteConstants.Animation.WALKING_DOWN, [0, 1], this.animSpeed, true);
+		this.sprite.animations.add(SpriteConstants.Animation.WALKING_UP, [2, 3], this.animSpeed, true);
+		this.sprite.animations.add(SpriteConstants.Animation.WALKING_SIDE, [4, 5], this.animSpeed, true);
+	}
 
 })();
