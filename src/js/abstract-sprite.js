@@ -105,9 +105,30 @@ var AbstractSprite = (function () {
 					this.sprite.animations.play(SpriteConstants.Animation.STILL_SIDE);
 					break;
 			}
-			
+
 			this.sprite.animations.stop();
 		}
 	}
 
+	function move() {
+		if(this.isMoving) {
+			switch(this.walkingDirection) {
+				case SpriteConstants.Direction.UP:
+					this.sprite.y -= this.walkingSpeed;
+					break;
+
+				case SpriteConstants.Direction.RIGHT:
+					this.sprite.x += this.walkingSpeed;
+					break;
+
+				case SpriteConstants.Direction.DOWN:
+					this.sprite.y += this.walkingSpeed;
+					break;
+
+				case SpriteConstants.Direction.LEFT;
+					this.sprite.x -= this.walkingSpeed;
+					break;
+			}
+		}
+	}
 })();
