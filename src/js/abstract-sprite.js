@@ -146,4 +146,24 @@ var AbstractSprite = (function () {
 		return tile;
 	}
 
+	function setNextTileFromCurrentDirection() {
+		switch(this.walkingDirection) {
+			case SpriteConstants.Direction.UP:
+				this.nextTile = {x: this.currentTile.x, y: this.currentTile.y - 1};
+				break;
+
+			case SpriteConstants.Direction.RIGHT:
+				this.nextTile = {x: this.currentTile.x + 1, y: this.currentTile.y};
+				break;
+
+			case SpriteConstants.Direction.DOWN:
+				this.nextTile = {x: this.currentTile.x, y: this.currentTile.y + 1};
+				break;
+
+			case SpriteConstants.Direction.LEFT:
+				this.nextTile = {x: this.currentTile.x, y: this.currentTile.y};
+				break;
+		}
+	}
+
 })();
