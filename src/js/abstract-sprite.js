@@ -60,4 +60,54 @@ var AbstractSprite = (function () {
 		this.sprite.animations.add(SpriteConstants.Animation.WALKING_SIDE, [4, 5], this.animSpeed, true);
 	}
 
+	function setAnim() {
+
+		// Walking animations
+		if(this.isWalkingAnim) {
+			switch(this.walkingDirection) {
+				case SpriteConstants.Direction.UP:
+					this.sprite.animations.play(SpriteConstants.Animation.WALKING_UP);
+					break;
+
+				case SpriteConstants.Direction.RIGHT:
+					this.sprite.scale.x = -1;
+					this.sprite.animations.play(SpriteConstants.Animation.WALKING_SIDE);
+					break;
+
+				case SpriteConstants.Direction.DOWN:
+					this.sprite.animations.play(SpriteConstants.Animation.WALKING_DOWN);
+					break;
+
+				case SpriteConstants.Direction.LEFT:
+					this.sprite.scale.x = 1;
+					this.sprite.animations.play(SpriteConstants.Animation.WALKING_SIDE);
+					break;
+			}
+		} 
+
+		// Idle animations
+		else {
+			switch(this.walkingDirection) {
+				case SpriteConstants.Direction.UP:
+					this.sprite.animations.play(SpriteConstants.Animation.STILL_UP);
+					break;
+
+				case SpriteConstants.Direction.RIGHT:
+					this.sprite.scale.x = -1;
+					this.sprite.animations.play(SpriteConstants.Animation.STILL_SIDE);
+
+				case SpriteConstants.Direction.DOWN:
+					this.sprite.animations.play(SpriteConstants.Animation.STILL_DOWN);
+					break;
+
+				case SpriteConstants.Direction.LEFT:
+					this.sprite.scale.x = 1;
+					this.sprite.animations.play(SpriteConstants.Animation.STILL_SIDE);
+					break;
+			}
+			
+			this.sprite.animations.stop();
+		}
+	}
+
 })();
