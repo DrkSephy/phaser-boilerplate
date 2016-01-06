@@ -131,4 +131,12 @@ var AbstractSprite = (function () {
 			}
 		}
 	}
+
+	function isOnTile() {
+		var spriteX = this.sprite.x + (SpriteConstants.Anchor.X * SpriteConstants.SIZE);
+		var spriteY = this.sprite.y;
+		var isOn = (spriteX % SpriteConstants.SIZE === 0) && (spriteY % SpriteConstants.SIZE === 0);
+		return isOn;
+	}
+
 })();
