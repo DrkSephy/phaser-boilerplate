@@ -139,4 +139,11 @@ var AbstractSprite = (function () {
 		return isOn;
 	}
 
+	function getTileFromCurrentPosition() {
+		var spriteX = this.sprite.x - (SpriteConstants.Anchor.X * SpriteConstants.SIZE);
+		var spriteY = this.sprite.y - SpriteConstants.SIZE;
+		var tile = {x: spriteX / SpriteConstants.SIZE, y: spriteY / SpriteConstants.SIZE};
+		return tile;
+	}
+
 })();
