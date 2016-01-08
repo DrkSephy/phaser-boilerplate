@@ -10,6 +10,9 @@
 	var _player = null;
 	var _isUpPressed = false;
 	var _isRightPressed = false;
+	var _isDownPressed  = false;
+	var _isLeftPressed  = false;
+	_keyboardInput      = null;
 
 	// Auto Initialization
 	init();
@@ -44,6 +47,26 @@
 		_map.preload();
 		_player.preload();
 		_tonberry.preload();
+	}
+
+	function create() {
+		// Set references
+		_keyboardInput = _game.input.keyboard;
+
+		// Init game objects
+		_map.init();
+		_player.init({x: 1, y: 1});
+		_tonberry.init({x: 7, y: 1});
+	}
+
+	function update() {
+		_player.update(
+			_keyboardInput.isDown(Phaser.Keyboard.UP) || _isUpPressed, 
+			_keyboardInput.isDown(Phaser.Keyboard.RIGHT) || _isRightPressed,
+			_keyboardInput.isDown(Phaser.Keyboard.DOWN) || _isDownPressed,
+			_keyboardInput.isDown(Phaser.Keyboard.LEFT) || _isLeftPressed
+		);
+		_tonberry.update();
 	}
 	
 })();
