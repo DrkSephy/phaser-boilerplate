@@ -39,5 +39,11 @@
 		_player = new Player(_game, _map);
 		_tonberry = new NPC(_game, _map);
 	}
+
+	function preload() {
+		_map.preload();
+		_player.preload();
+		_tonberry.preload();
+	}
 	
 })();
