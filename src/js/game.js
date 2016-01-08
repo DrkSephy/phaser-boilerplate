@@ -68,5 +68,37 @@
 		);
 		_tonberry.update();
 	}
+
+	function onUpPressed() {
+		_isUpPressed = true;
+	}
+
+	function onRightPressed() {
+		_isRightPressed = true;
+	}
+
+	function onDownPressed() {
+		_isDownPressed = true;
+	}
+
+	function onLeftPressed() {
+		_isLeftPressed = true;
+	}
+
+	function onUpReleased() {
+		_isUpPressed = false;
+	}
+
+	function onRightReleased() {
+		_isRightPressed = false;
+	}
+
+	function onDownReleased() {
+		_isDownPressed = false;
+	}
+
+	function onLeftReleased() {
+		_isLeftPressed = false;
+	}
 	
 })();
